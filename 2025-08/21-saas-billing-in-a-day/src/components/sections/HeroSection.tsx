@@ -11,7 +11,9 @@ export function HeroSection() {
   const handleWaitlistSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert(`Thank you for joining our waitlist! We'll contact you at ${email} when we launch.`);
+      alert(
+        `Thank you for joining our waitlist! We'll contact you at ${email} when we launch.`
+      );
       setEmail("");
     }
   };
@@ -20,9 +22,9 @@ export function HeroSection() {
     <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          {/* Social Proof Badge */}
+          {/* Product Badge */}
           <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm">
-            Trusted by 200+ SaaS founders
+            Coming Early 2025
           </Badge>
 
           {/* Main Headline */}
@@ -33,96 +35,137 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Stop losing revenue to broken billing systems. Get Stripe-powered subscription management 
-            that deploys instantly and reduces billing errors by 80%.
+            Stop losing revenue to broken billing systems. Get Stripe-powered
+            subscription management that deploys instantly and reduces billing
+            errors by 80%.
           </p>
 
           {/* CTA Form */}
-          <div className="max-w-md mx-auto mb-8">
-            <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3">
+          <div className="max-w-lg mx-auto mb-12">
+            <form
+              onSubmit={handleWaitlistSubmit}
+              className="flex flex-col sm:flex-row gap-3"
+            >
               <Input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 h-12 text-lg"
+                className="flex-1 h-14 px-4 text-base border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-0 transition-colors"
               />
-              <Button type="submit" size="lg" className="h-12 px-8 text-lg font-semibold">
-                Join the Waitlist - Launch Early 2025
+              <Button
+                type="submit"
+                className="h-14 px-8 text-base font-medium bg-blue-600 hover:bg-blue-700 rounded-xl transition-all duration-200 whitespace-nowrap"
+              >
+                Join Waitlist
               </Button>
             </form>
+            <p className="text-sm text-gray-500 text-center mt-3">
+              Get early access • No spam, unsubscribe anytime
+            </p>
           </div>
 
-          {/* Secondary CTA */}
-          <Button variant="outline" size="lg" className="mb-12">
-            Watch 2-Minute Demo
-          </Button>
-
           {/* Hero Visual */}
-          <div className="relative max-w-5xl mx-auto">
-            <div className="bg-white rounded-lg shadow-2xl p-8 border">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="relative max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Before */}
-                <div className="text-left">
-                  <h3 className="text-lg font-semibold text-red-600 mb-4">Before: Billing Chaos</h3>
-                  <div className="space-y-3 text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span>Manual spreadsheet tracking</span>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-600 text-lg">😤</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span>Failed payment alerts</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span>Tax compliance nightmares</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span>Revenue leaks</span>
-                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      Before: Billing Chaos
+                    </h3>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      "Manual spreadsheet tracking",
+                      "Failed payment alerts",
+                      "Tax compliance nightmares",
+                      "Revenue leaks",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-3 p-3 bg-red-50 rounded-lg"
+                      >
+                        <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* After */}
-                <div className="text-left">
-                  <h3 className="text-lg font-semibold text-green-600 mb-4">After: Clean Dashboard</h3>
-                  <div className="space-y-3 text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Real-time MRR tracking</span>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-600 text-lg">😌</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Automated dunning campaigns</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Global tax compliance</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Revenue optimization</span>
-                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      After: Clean Dashboard
+                    </h3>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      "Real-time MRR tracking",
+                      "Automated dunning campaigns",
+                      "Global tax compliance",
+                      "Revenue optimization",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-3 p-3 bg-green-50 rounded-lg"
+                      >
+                        <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              {/* Floating Metrics */}
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                <div className="bg-blue-50 rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-blue-600">$47K</div>
-                  <div className="text-sm text-gray-600">MRR</div>
-                </div>
-                <div className="bg-green-50 rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-green-600">2.1%</div>
-                  <div className="text-sm text-gray-600">Churn</div>
-                </div>
-                <div className="bg-purple-50 rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-purple-600">23%</div>
-                  <div className="text-sm text-gray-600">Growth</div>
+              {/* Metrics Dashboard Preview */}
+              <div className="mt-12 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl">
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">
+                  Your Dashboard Preview
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">
+                      $47K
+                    </div>
+                    <div className="text-sm font-medium text-gray-600">
+                      Monthly Recurring Revenue
+                    </div>
+                    <div className="text-xs text-green-600 mt-1">
+                      ↗ +12% this month
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+                    <div className="text-3xl font-bold text-green-600 mb-2">
+                      2.1%
+                    </div>
+                    <div className="text-sm font-medium text-gray-600">
+                      Churn Rate
+                    </div>
+                    <div className="text-xs text-green-600 mt-1">
+                      ↘ -0.3% improvement
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+                    <div className="text-3xl font-bold text-purple-600 mb-2">
+                      23%
+                    </div>
+                    <div className="text-sm font-medium text-gray-600">
+                      Growth Rate
+                    </div>
+                    <div className="text-xs text-green-600 mt-1">
+                      ↗ +5% vs last quarter
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -3,7 +3,6 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { PricingSection } from "@/components/sections/PricingSection";
-import { DemoSection } from "@/components/sections/DemoSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { UrgencySection } from "@/components/sections/UrgencySection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
@@ -17,7 +16,6 @@ export default function Home() {
       <SolutionSection />
       <SocialProofSection />
       <PricingSection />
-      <DemoSection />
       <FAQSection />
       <UrgencySection />
       <FinalCTASection />
